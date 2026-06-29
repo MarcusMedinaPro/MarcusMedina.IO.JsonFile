@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>MarcusMedina.IO.JsonFile</PackageId>
+    <RootNamespace>MarcusMedina.IO.JsonFile</RootNamespace>
+    <AssemblyName>MarcusMedina.IO.JsonFile</AssemblyName>
+    <TargetFramework>net10.0</TargetFramework>
+    <Version>4.0.0</Version>
+    <AssemblyVersion>4.0.0</AssemblyVersion>
+    <FileVersion>4.0.0</FileVersion>
+    <ApplicationIcon>json-file.ico</ApplicationIcon>
+    <Authors>Marcus Medina</Authors>
+    <Company>MarcusMedinaPro</Company>
+    <Copyright>Copyright (c) Marcus Medina, 2022-2026.</Copyright>
+    <Description>JSON file persistence — save and load any object as a JSON file. For .NET 10+</Description>
+    <PackageIcon>json-file.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/MarcusMedinaPro/MarcusMedina.IO.JsonFile</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MarcusMedinaPro/MarcusMedina.IO.JsonFile.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageTags>json;file;io;persistence;wrapper;c#;csharp;dotnet;.net;load;save;net10</PackageTags>
+    <LangVersion>14.0</LangVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="./json-file.ico" Pack="true" PackagePath="\" />
+    <Content Include="./json-file.png" Pack="true" PackagePath="\" />
+    <Content Include="../../../README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+</Project>

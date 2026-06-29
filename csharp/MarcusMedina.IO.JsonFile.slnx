@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/MarcusMedina.IO.JsonFile/MarcusMedina.IO.JsonFile.csproj" />
+  <Project Path="tests/MarcusMedina.IO.JsonFile.Tests/MarcusMedina.IO.JsonFile.Tests.csproj" />
+</Solution>
