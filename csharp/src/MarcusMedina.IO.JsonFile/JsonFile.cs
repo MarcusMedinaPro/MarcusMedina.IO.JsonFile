@@ -76,7 +76,7 @@ public class JsonFile<T> : IDisposable where T : new()
             {
                 data = File.ReadAllText($"{Filename}.{Suffix}");
             }
-            catch (Exception ex)
+            catch (IOException ex)
             {
                 Debug.WriteLine("Error reading file:");
                 Debug.WriteLine(ex.Message);
@@ -88,7 +88,7 @@ public class JsonFile<T> : IDisposable where T : new()
         {
             Data = JsonSerializer.Deserialize<T>(data, Format);
         }
-        catch (Exception ex)
+        catch (JsonException ex)
         {
             Debug.WriteLine("Error deserializing file:");
             Debug.WriteLine(ex.Message);
@@ -109,7 +109,7 @@ public class JsonFile<T> : IDisposable where T : new()
         {
             json = JsonSerializer.Serialize(Data, Format);
         }
-        catch (Exception ex)
+        catch (JsonException ex)
         {
             Debug.WriteLine("Error serializing data:");
             Debug.WriteLine(ex.Message);
@@ -125,7 +125,7 @@ public class JsonFile<T> : IDisposable where T : new()
         {
             File.WriteAllText($"{Filename}.{Suffix}", json);
         }
-        catch (Exception ex)
+        catch (IOException ex)
         {
             Debug.WriteLine("Error saving data:");
             Debug.WriteLine(ex.Message);
