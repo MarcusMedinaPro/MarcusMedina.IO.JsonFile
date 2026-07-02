@@ -11,7 +11,9 @@
 
 **Save and load any object as a JSON file — one class, zero boilerplate.**
 
-> **Story:** _TODO — ask Marcus for the real background behind this package._
+> Back in 2009, while I was in my second year of studies myself and working as a supervisor for first-year students, I wrote the first version of this to show them what object-oriented programming was actually good for — not just theory about classes and encapsulation, but a real class that hides the messy plumbing behind a clean interface. It doubled as a lifesaver in their own coursework: a lot of them were writing small games at the time, and this gave them an easy way to save and reload progress without having to think about serialisation themselves.
+>
+> In this case, I wanted the whole save/load story to disappear behind two lines of code, so the lesson stayed about OOP, not about JSON.
 
 ```csharp
 using MarcusMedina.IO.JsonFile;
