@@ -27,21 +27,28 @@ public class JsonFileTests : IDisposable
     /// <summary>
     /// Initialize the tests - runs before each test
     /// </summary>
-    public JsonFileTests()
-    {
-        if (File.Exists(filename))
-            File.Delete(filename);
-    }
+    public JsonFileTests() => CleanupTestFiles();
 
     /// <summary>
     /// Cleans up the tests - runs after each test
     /// </summary>
     public void Dispose()
     {
-        if (File.Exists(filename))
-            File.Delete(filename);
+        CleanupTestFiles();
 
         GC.SuppressFinalize(this);
+    }
+
+    /// <summary>
+    /// Deletes every test artefact for <see cref="filename"/> — the base file, and every
+    /// suffix/backup variant JsonFile can produce (".json", ".json.bak", custom suffixes, etc.).
+    /// Without this, JsonFile's actual output files (e.g. "Hello.txt.json") never get cleaned
+    /// between tests, since JsonFile writes to "{filename}.{suffix}", not "{filename}" itself.
+    /// </summary>
+    private static void CleanupTestFiles()
+    {
+        foreach (var path in Directory.GetFiles(".", $"{filename}*"))
+            File.Delete(path);
     }
 
     /// <summary>
@@ -96,21 +103,84 @@ public class JsonFileTests : IDisposable
     }
 
     /// <summary>
-    /// Loads a test.
+    /// Loads previously saved data back correctly (round-trip).
     /// </summary>
     [Fact]
     public void LoadTest()
     {
         // Arrange
         var expected = new List<string>() { message };
-        File.WriteAllText(filename, message);
-        var file = new JsonFile<List<string>>(filename);
+        var writer = new JsonFile<List<string>>(filename)
+        {
+            Data = expected,
+        };
+        writer.Save();
 
         // Act
-        _ = file.Load();
+        var reader = new JsonFile<List<string>>(filename);
+        var actual = reader.Load();
 
         // Assert
-        Assert.Equal(message, string.Join(',', expected));
+        Assert.Equal(expected, actual);
+    }
+
+    /// <summary>
+    /// Loading a file with invalid/corrupt JSON falls back to a fresh instance instead of throwing.
+    /// </summary>
+    [Fact]
+    public void LoadCorruptJsonFallsBackToNewInstanceTest()
+    {
+        // Arrange
+        File.WriteAllText($"{filename}.json", "{ not valid json ][");
+
+        // Act
+        var file = new JsonFile<List<string>>(filename);
+
+        // Assert
+        Assert.NotNull(file.Data);
+        Assert.Empty(file.Data);
+    }
+
+    /// <summary>
+    /// Dispose() saves any pending changes before releasing the instance.
+    /// </summary>
+    [Fact]
+    public void DisposeSavesPendingChangesTest()
+    {
+        // Arrange
+        var expected = new List<string>() { message };
+
+        // Act
+        using (var file = new JsonFile<List<string>>(filename))
+        {
+            file.Data = expected;
+        }
+
+        // Assert
+        var reloaded = new JsonFile<List<string>>(filename);
+        Assert.Equal(expected, reloaded.Data);
+    }
+
+    /// <summary>
+    /// A custom Suffix produces a file with that suffix instead of the default ".json".
+    /// </summary>
+    [Fact]
+    public void CustomSuffixWritesExpectedFileTest()
+    {
+        // Arrange
+        const string suffix = "bak2";
+        var file = new JsonFile<List<string>>(filename)
+        {
+            Suffix = suffix,
+            Data = new List<string>() { message },
+        };
+
+        // Act
+        file.Save();
+
+        // Assert
+        Assert.True(File.Exists($"{filename}.{suffix}"));
+        File.Delete($"{filename}.{suffix}");
     }
 
     /// <summary>
