@@ -11,6 +11,8 @@
 
 **Save and load any object as a JSON file — one class, zero boilerplate.**
 
+> **Story:** _TODO — ask Marcus for the real background behind this package._
+
 ```csharp
 using MarcusMedina.IO.JsonFile;
 
@@ -118,6 +120,30 @@ Expected output: `Verified OK`
 
 ---
 
+## Built with Human + AI Collaboration
+
+This library was written by **Marcus Medina** together with **Claude Code** (Anthropic) — not through "vibe coding" where you just describe and accept, but through genuine collaboration: planning together, reviewing each other's decisions, pushing back when something felt wrong, and iterating until the result felt right.
+
+The goal was always to write code worth reading — the kind a student can open, understand, and learn from. AI was a partner in that process, not a shortcut around it.
+
+If you're curious about this way of working, the source code and git history are open. Every decision has a reason behind it.
+
+## Made for Curious Minds
+
+This library was built with students in mind — not as a black box to copy and paste, but as a real-world example of how clean, purposeful code is written and shared.
+
+Whether you're discovering C# for the first time, need a reliable helper for your school project, or are simply trying to fall in love with writing code — you're exactly who this was made for.
+
+The source is open. Read it, fork it, break it, improve it. That's the whole point.
+
+And if this library saved you an afternoon, or made something click that didn't before — that's everything.
+
+*Non-students are equally welcome. Good code doesn't care about your diploma.*
+
+⭐ If this helped you, consider starring the project on GitHub — it helps other students find it too.
+
+💬 Have an idea, a feature request, or just want to say hi? Open an issue on GitHub — I'd love to hear from you.
+
 ## License
 
-MIT — see [LICENSE](LICENSE)
+MIT — see [LICENSE](https://github.com/MarcusMedinaPro/MarcusMedina.IO.JsonFile/blob/main/LICENSE)
