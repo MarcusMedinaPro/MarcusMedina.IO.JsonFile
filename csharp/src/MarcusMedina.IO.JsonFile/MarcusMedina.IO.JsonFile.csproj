@@ -7,7 +7,7 @@
     <RootNamespace>MarcusMedina.IO.JsonFile</RootNamespace>
     <AssemblyName>MarcusMedina.IO.JsonFile</AssemblyName>
     <TargetFramework>net10.0</TargetFramework>
-    <Version>4.0.1</Version>
+    <Version>4.0.2</Version>
     <AssemblyVersion>4.0.0</AssemblyVersion>
     <FileVersion>4.0.0</FileVersion>
     <ApplicationIcon>json-file.ico</ApplicationIcon>
@@ -17,7 +17,7 @@
     <Description>JSON file persistence — save and load any object as a JSON file. For .NET 10+</Description>
     <PackageIcon>json-file.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/MarcusMedinaPro/MarcusMedina.IO.JsonFile</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/MarcusMedinaPro/MarcusMedina.IO.JsonFile/wiki</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MarcusMedinaPro/MarcusMedina.IO.JsonFile.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
