@@ -23,6 +23,7 @@ on:
     branches: [test]
 
 permissions:
+  actions: read
   security-events: write
   contents: read
 
