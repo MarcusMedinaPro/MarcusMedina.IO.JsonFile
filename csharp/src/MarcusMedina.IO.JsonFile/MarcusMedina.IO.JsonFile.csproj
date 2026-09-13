@@ -18,7 +18,7 @@
     <PackageIcon>json-file.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/MarcusMedinaPro/MarcusMedina.IO.JsonFile/wiki</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/MarcusMedinaPro/MarcusMedina.IO.JsonFile.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/MarcusMedinaPro/MarcusMedina.IO.JsonFile</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
