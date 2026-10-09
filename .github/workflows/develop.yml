@@ -1,20 +1,22 @@
-# Develop Workflow Template
-# Snabba unit tests på develop-grenen — ingen signering, inget pack.
+# Unit tests på feature- och develop-grenar — snabb feedback, ingen signering.
 
 name: 🧪 Develop — Unit Tests
 
 on:
   push:
-    branches: [develop]
+    branches: [develop, "feature/**"]
   pull_request:
-    branches: [develop]
+    branches: [develop, "feature/**"]
   workflow_dispatch:
 
 permissions:
   contents: read
 
 env:
-  DOTNET_VERSION: '10.0.x'
+  DOTNET_VERSION: |
+    8.0.x
+    9.0.x
+    10.0.x
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
 
