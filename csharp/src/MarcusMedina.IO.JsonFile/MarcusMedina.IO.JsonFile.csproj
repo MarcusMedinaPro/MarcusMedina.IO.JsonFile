@@ -7,7 +7,7 @@
     <RootNamespace>MarcusMedina.IO.JsonFile</RootNamespace>
     <AssemblyName>MarcusMedina.IO.JsonFile</AssemblyName>
     <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
-    <Version>4.0.2</Version>
+    <Version>4.0.3</Version>
     <AssemblyVersion>4.0.0</AssemblyVersion>
     <FileVersion>4.0.0</FileVersion>
     <ApplicationIcon>json-file.ico</ApplicationIcon>
